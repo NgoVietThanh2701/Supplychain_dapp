@@ -1,0 +1,7 @@
+PORT = 5000
+DATABASE_NAME = sullychain
+
+PASS_MAIL = ******
+
+SECRET_KEY = dkfsdflskdfjsddaads
+TOKEN_LIFE = 10h
