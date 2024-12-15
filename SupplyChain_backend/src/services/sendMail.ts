@@ -8,7 +8,7 @@ const sendMail = async (mailOptions: any) => {
       secureConnection: false,
       name: "Agri",
       auth: {
-         user: 'ngovietthanh2701@gmail.com',
+         user: process.env.EMAIL_ADMIN,
          pass: process.env.PASS_MAIL
       },
       tls: {

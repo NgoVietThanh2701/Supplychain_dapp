@@ -40,7 +40,7 @@ export const register = async (req: Request, res: Response) => {
             otp: otp
          });
          const mailOptions = {
-            from: '"Supply chain 👻" ngovietthanh680@gmail.com',
+            from: '"Supply chain 👻" process.env.EMAIL_ADMIN',
             to: email,
             subject: 'OTP for Registration',
             text: `Your OTP is: ${otp}`,

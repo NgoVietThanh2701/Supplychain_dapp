@@ -53,7 +53,7 @@ export const addUser = async (req: Request, res: Response) => {
       if (!user) return res.status(HttpStatusCode.BAD_REQUEST).json(DataResponse(true, MessageResponse.ACCOUNT_NO_EXISTS));
       await User.update({ active: true }, { where: { id: user.id } });
       const mailOptions = {
-         from: '"Supply chain 👻" ngovietthanh680@gmail.com',
+         from: '"Supply chain 👻" process.env.EMAIL_ADMIN',
          to: user.email,
          subject: 'Chúc mừng, Tài khoản của bạn đã được phê duyệt',
          text: `Vui lòng đăng nhập tại http://localhost:3000/login/${user.role}
@@ -74,7 +74,7 @@ export const deleteRequest = async (req: Request, res: Response) => {
       if (!user) return res.status(HttpStatusCode.BAD_REQUEST).json(DataResponse(true, MessageResponse.ACCOUNT_NO_EXISTS));
       await User.destroy({ where: { id: user.id } });
       const mailOptions = {
-         from: '"Supply chain 👻" ngovietthanh680@gmail.com',
+         from: '"Supply chain 👻" process.env.EMAIL_ADMIN',
          to: user.email,
          subject: 'Rất tiếc, tài khoản của bạn đã bị xóa do thông tin đăng ký không đúng',
          text: `from Supply Chain Team`,
